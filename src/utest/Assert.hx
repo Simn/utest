@@ -285,7 +285,9 @@ class Assert {
             for (i in 0...ebytes.length)
               if (ebytes.get(i) != vbytes.get(i))
               {
-                status.error = "expected byte " + ebytes.get(i) + " but it is " + vbytes.get(i) + (status.path == '' ? '' : ' for field '+status.path);
+                var hack1 = /* ebytes.get(i) */ 1;
+                var hack2 = /* vbytes.get(i) */ 2;
+                status.error = "expected byte " + hack1 + " but it is " + hack2 + (status.path == '' ? '' : ' for field '+status.path);
                 return false;
               }
           }
